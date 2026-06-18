@@ -115,14 +115,7 @@
       background: #151C24;
       border: 1px solid #1e2d3d;
       border-radius: 12px;
-      padding: 0;
       overflow: hidden;
-    }
-
-    .jotform-wrap iframe {
-      width: 100% !important;
-      border: none !important;
-      min-height: 320px;
     }
 
     .footer {
@@ -169,23 +162,15 @@
   </div>
 
   <div class="form-card">
-<div class="jotform-wrap" style="padding: 24px;">
-  <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
-  <script>
-    window.jotformEmbedHandler(
-      "ifr-261677351510051",
-      "https://form.jotform.com/"
-    );
-  </script>
-  <iframe
-    id="ifr-261677351510051"
-    title="Deck Early Access Signup"
-    src="https://form.jotform.com/261677351510051"
-    frameborder="0"
-    style="width:100%; min-height:520px; border:none;"
-    scrolling="no"
-  ></iframe>
-</div>
+    <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+    <iframe
+      id="ifr-261677351510051"
+      title="Deck Early Access Signup"
+      src="https://form.jotform.com/261677351510051"
+      frameborder="0"
+      style="width:100%; min-height:560px; border:none; display:block;"
+      scrolling="no"
+    ></iframe>
   </div>
 
   <div class="footer">
@@ -196,11 +181,11 @@
   </div>
 
   <script>
-    // Auto-resize iframe to fit Jotform content
+    window.jotformEmbedHandler("ifr-261677351510051", "https://form.jotform.com/");
     window.addEventListener('message', function(e) {
       if (typeof e.data === 'object' && e.data.action === 'setHeight') {
-        var iframe = document.getElementById('JotFormIFrame-261677351510051');
-        if (iframe) iframe.style.height = e.data.height + 'px';
+        var iframe = document.getElementById('ifr-261677351510051');
+        if (iframe) iframe.style.height = (parseInt(e.data.height) + 60) + 'px';
       }
     });
   </script>
